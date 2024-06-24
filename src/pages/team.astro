@@ -18,8 +18,8 @@ import Hero from '../components/hero.astro'
 import '../styles/pages/team.scss'
 ---
 <Layout title="Members">
-    <ul id="menu">
-        <h1>Our Team</h1>
+    <h1>Our Team</h1>
+    <ul class="list">
         {
             members.map((member) => {
                 var username = member.username

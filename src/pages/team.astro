@@ -17,25 +17,27 @@ import Hero from '../components/hero.astro'
 
 import '../styles/pages/team.scss'
 ---
-<Layout title="Members">
-    <h1>Our Team</h1>
-    <ul class="list">
-        {
-            members.map((member) => {
-                var username = member.username
-                var role = !!member.role ? member.role === 'Member' ? '' : member.role : ''
-
-                return (
-                    <a href={
-                        `/member/${username}/`
-                    }>
-                        <li>
-                            {member.name}
-                            {!!role ? <span id="tag">({role})</span> : ''}
-                        </li>
-                    </a>
-                )
-            })
-        }
-    </ul>
+<Layout title="Our Team">
+    <section class="team">
+        <h1>Our Team</h1>
+        <ul class="list">
+            {
+                members.map((member) => {
+                    var username = member.username
+                    var role = !!member.role ? member.role === 'Member' ? '' : member.role : ''
+    
+                    return (
+                        <a href={
+                            `/member/${username}/`
+                        }>
+                            <li>
+                                {member.name}
+                                {!!role ? <span id="tag">({role})</span> : ''}
+                            </li>
+                        </a>
+                    )
+                })
+            }
+        </ul>
+    </section>
 </Layout>

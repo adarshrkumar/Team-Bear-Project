@@ -171,6 +171,10 @@ a, button, [type="submit"], [type="button"] {
 .main {
   flex: 1;
 
+  > section {
+    background: white;
+  }
+
   > * {
     margin-inline: auto;
   }

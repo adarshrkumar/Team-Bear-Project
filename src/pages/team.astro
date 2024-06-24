@@ -5,7 +5,7 @@ await fetch(`https://bear-database.akum.site/getUsernames`)
     .then(json => usernames = json.response)
 
 var membersObj: object = {}
-await fetch(`https://bear-database.akum.site/getAllMembers`)
+await fetch(`https://bear-database.akum.site/getTeamMembers`)
     .then(res => res.json())
     .then(json => membersObj = json.response)
 

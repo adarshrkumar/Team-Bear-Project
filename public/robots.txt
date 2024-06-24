@@ -1,0 +1,10 @@
+User-agent: Googlebot
+Allow: /
+Disallow: /assets/arrows/
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://graphics-for-good.com/sitemap.xml

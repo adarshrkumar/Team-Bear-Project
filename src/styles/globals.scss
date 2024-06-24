@@ -160,6 +160,8 @@ a, button, [type="submit"], [type="button"] {
 
 
 .main {
+  flex: 1;
+  
   > * {
     margin-inline: auto;
   }

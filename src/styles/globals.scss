@@ -90,6 +90,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 button, [type="submit"], [type="button"] {
   margin: inherit;
   padding: inherit;
@@ -161,7 +170,7 @@ a, button, [type="submit"], [type="button"] {
 
 .main {
   flex: 1;
-  
+
   > * {
     margin-inline: auto;
   }

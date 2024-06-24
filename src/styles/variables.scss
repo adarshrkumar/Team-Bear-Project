@@ -1,0 +1,24 @@
+// site
+$orig-bg-color: #1a4276;
+$bg-color: $orig-bg-color;
+
+$scroll-bar-width: 10px;
+
+$shadow-color: black;
+$shadow-size: 10px;
+$main-shadow: $shadow-color 0 0 $shadow-size;
+
+$tiny-split-image-parent-min-height: 0px;
+
+:root {
+    --orig-bg-color: #{$orig-bg-color};
+    background-color: var(--orig-bg-color);
+  
+    --scroll-bar-width: #{$scroll-bar-width};
+  
+    --shadow-color: #{$shadow-color};
+    --shadow-size: #{$shadow-size};
+    --main-shadow: #{$main-shadow};
+
+    --tiny-split-image-parent-min-height: #{$tiny-split-image-parent-min-height};
+}

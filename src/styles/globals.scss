@@ -158,3 +158,9 @@ a, button, [type="submit"], [type="button"] {
   line-height: 1;
 }
 
+
+.main {
+  > * {
+    margin-inline: auto;
+  }
+}

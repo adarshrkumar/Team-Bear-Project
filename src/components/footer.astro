@@ -1,0 +1,21 @@
+---
+import '../styles/components/footer.scss'
+
+export interface Props {
+	siteName: string;
+}
+
+var { siteName } = Astro.props as Props
+
+var yearFounded = 2024
+var currentYear = (new Date()).getFullYear()
+
+var copyrightYear = currentYear.toString()
+if (yearFounded < currentYear) `${yearFounded}-${currentYear}`
+
+---
+<footer>
+    <span>
+        © {copyrightYear} {siteName} | Check Status at <a href="https://go.graphics-for-good.com/Status">/status</a>.
+    </span>
+</footer>

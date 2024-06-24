@@ -1,0 +1,19 @@
+---
+import '../styles/components/hero.scss'
+
+export interface Props {
+	idName: string;
+  classItems: string;
+  inlineStyles: string;
+}
+
+const { idName, classItems, inlineStyles } = Astro.props as Props;
+let className = 'hero'
+if (!!classItems) { 
+  className = `${className} ${classItems}`
+}
+
+---
+<section class={className} id={idName} style={inlineStyles}>
+  <slot />
+</section>

@@ -1,0 +1,41 @@
+---
+var usernames: any[] = []
+await fetch(`https://bear-database.akum.site/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
+
+var membersObj: object = {}
+await fetch(`https://bear-database.akum.site/getAllMembers`)
+    .then(res => res.json())
+    .then(json => membersObj = json.response)
+
+var members: any[] = []
+usernames.forEach(u => members.push(membersObj[u]))
+
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/hero.astro'
+
+import '../styles/pages/team.scss'
+---
+<Layout title="Members">
+    <ul id="menu">
+        <h1>Our Team</h1>
+        {
+            members.map((member) => {
+                var username = member.username
+                var role = !!member.role ? member.role === 'Member' ? '' : member.role : ''
+
+                return (
+                    <a href={
+                        `/members/${username}/`
+                    }>
+                        <li>
+                            {member.name}
+                            {!!role ? <span id="tag">({role})</span> : ''}
+                        </li>
+                    </a>
+                )
+            })
+        }
+    </ul>
+</Layout>

@@ -5,12 +5,12 @@ await fetch(`https://bear-database.akum.site/getUsernames`)
     .then(json => usernames = json.response)
 
 var membersObj: object = {}
-// await fetch(`https://bear-database.akum.site/getAllMembers`)
-//     .then(res => res.json())
-//     .then(json => membersObj = json.response)
+await fetch(`https://bear-database.akum.site/getAllMembers`)
+    .then(res => res.json())
+    .then(json => membersObj = json.response)
 
 var members: any[] = []
-usernames.forEach(u => {if (membersObj[u]) members.push(membersObj[u])})
+usernames.forEach(u => members.push(membersObj[u]))
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'

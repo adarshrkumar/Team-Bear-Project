@@ -182,7 +182,8 @@ a, button, [type="submit"], [type="button"] {
 
 .list {
   // width: fit-content;
-  li {
+  
+  a:has(> li), li {
     width: fit-content;
   }
 }

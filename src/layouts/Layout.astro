@@ -1,0 +1,50 @@
+---
+import Header from '../components/header.astro'
+import Footer from '../components/footer.astro'
+
+import '../styles/globals.scss'
+import '../styles/icons.scss'
+
+export interface Props {
+	title: string;
+}
+
+var sTitle = 'sName'
+var description = 'sDesc'
+var sUrl = 'sURL'
+var pImg = '/assets/preview.svg'
+var largeFavicon = '/favicon.png'
+
+const { title } = Astro.props as Props;
+
+let dTitle = `${title} | ${sTitle}`
+if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="image" content={pImg}>
+    <meta property="description" content={description}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={pImg}>
+    <meta property="og:url" content={sUrl}> 
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:title" content={dTitle}> 
+    <meta name="twitter:description" content={description}> 
+    <meta name="twitter:image" content={pImg}> 
+    <link href={largeFavicon} rel="icon" type="image/png" />
+    <title>{dTitle}</title>
+  </head>
+  <body>
+    <Header siteName={sTitle} />
+    <main id="content">
+      <slot />
+    </main>
+    <Footer siteName={sTitle} />
+  </body>
+</html>

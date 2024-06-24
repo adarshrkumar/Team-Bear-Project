@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+import '../../styles/pages/members.scss'
+import '../../styles/photos.scss'
+
+var usernames = []
+
+await fetch(`https://database.graphics-for-good.com/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
+
+var paths = []
+usernames.forEach(function(u, i) {
+    paths.push({params: {username: u}})
+})
+
+export function getStaticPaths() {
+    return [
+        {params: {username: 'adarsh'}}, 
+        {params: {username: 'amelia'}}, 
+        {params: {username: 'beatriz'}}, 
+        {params: {username: 'bridget'}}, 
+        {params: {username: 'cedrus'}}, 
+        {params: {username: 'esha'}}, 
+        {params: {username: 'hanlin'}}, 
+        {params: {username: 'isabelle'}}, 
+        {params: {username: 'jeremy'}}, 
+        {params: {username: 'lorelai'}}, 
+        {params: {username: 'luce'}}, 
+        {params: {username: 'mia'}}, 
+        {params: {username: 'robin'}}, 
+        {params: {username: 'samantha'}}, 
+        {params: {username: 'sayuri'}}, 
+        {params: {username: 'shikha'}}, 
+
+        {params: {username: 'juhi'}}, 
+        {params: {username: 'rien'}}, 
+        {params: {username: 'sam'}}, 
+    ];
+}
+
+const { username } = Astro.params;
+
+import MemberPageTemplate from '../../components/memberPageTemplate.astro'
+
+var userData = {}
+var code = -1
+
+await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
+    .then(res => res.json())
+    .then(json => {
+      code = json.code
+      if (code === 200) {
+        userData = json.response
+      }
+      else {
+        console.log(json)
+        userData = json
+      }
+    })
+
+---
+<Layout title={userData.name}>
+  <main id="content" class="profile">
+    <section>
+      {
+        code === 200 ? 
+        <img class="pfp" id="pfp" src={
+          !!userData.pfp ? userData.pfp.url : userData.pfp
+        }></span>
+        <h1 class="name" id="name">{userData.name}</h1>
+        <a class="email" id="email" href={`mailto:${
+          !!userData.email ? userData.email.address : userData.email
+        }`}>{
+          !!userData.email ? userData.email.address : userData.email
+        }</a>
+        <a class="location" id="location" href={
+          !!userData.location ? userData.location.mapLink : userData.location
+        }>
+          <div></div>
+          <span>{
+            !!userData.location ? userData.location.combined : userData.location
+          }</span>
+        </a>
+        <ul class="socials">
+          {
+            !!userData.socials ? 
+            userData.socials.map((social) => (
+              <li>
+                <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+              </li>
+            )) : ''
+          }
+        </ul>
+        <p class="bio" id="bio" set:html={userData.bio.result}></p>
+        <h2>Portfolio</h2>
+        <ul class="photos" style="height: auto; gap: 25px;">
+          {
+            !!userData.portfolio ? 
+            userData.portfolio.map((photo) => (
+              <li>
+                <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+              </li>
+            )) : ''
+          }
+        </ul> : 
+        <pre>{userData}</pre>
+      }
+    </section>
+  </main>
+  <script is:inline src="/members.js"></script>
+  <script is:inline src="/modal.js"></script>
+</Layout>

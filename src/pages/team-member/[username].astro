@@ -31,7 +31,7 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var userData = {}
 var code = -1
 
-await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
+await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`)
     .then(res => res.json())
     .then(json => {
       code = json.code
@@ -39,7 +39,7 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
         userData = json.response
       }
       else {
-        console.log(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
+        console.log(`\nhttps://database.graphics-for-good.com/getMemberInfo?username=${username}`)
         console.log(json)
         userData = json
       }

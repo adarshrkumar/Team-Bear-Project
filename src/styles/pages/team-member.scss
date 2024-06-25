@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 main.profile {
     --pfp-size: 128px;
     flex: 1;
@@ -14,8 +16,8 @@ main.profile {
 
         max-width: 500px;
 
-        background-color: white;
-        color: black;
+        background-color: $base-color;
+        color: $text-color;
 
         display: flex;
         flex-direction: column;
@@ -55,7 +57,7 @@ main.profile {
         text-decoration: none;
 
         &:is(.email, .location) {
-            color: black;
+            color: $text-color;
             line-height: 1;
 
             transition: all 100ms ease;

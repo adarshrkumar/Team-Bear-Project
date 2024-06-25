@@ -200,7 +200,7 @@ a, button, [type="submit"], [type="button"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $default-padding;
+    gap: #{$default-padding / 2};
 
     & > a {
         width: fit-content;

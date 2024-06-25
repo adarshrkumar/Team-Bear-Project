@@ -43,7 +43,7 @@
 }
 
 html {
-    min-width: calc(100dvw - var(--scroll-bar-width));
+    min-width: calc(100dvw - $scroll-bar-width);
     min-height: 100%;
     scroll-behavior: smooth;
 }

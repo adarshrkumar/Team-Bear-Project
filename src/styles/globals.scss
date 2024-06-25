@@ -182,7 +182,7 @@ a, button, [type="submit"], [type="button"] {
 .main {
     flex: 1;
 
-    &, > section {
+    :is(&, > section):not(:empty) {
         box-sizing: border-box;
         padding: $default-padding;
     }

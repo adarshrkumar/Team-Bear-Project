@@ -20,10 +20,8 @@ var pageClass = title.toLowerCase()
 if (pageClass.includes(' ')) pageClass = pageClass.split(' ').join('-')
 
 let dTitle = `${title} | ${sTitle}`
-if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]
-
+if (title === 'Home') dTitle += sTitle
 ---
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

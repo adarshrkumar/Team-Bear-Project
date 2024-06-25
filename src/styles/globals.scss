@@ -88,6 +88,10 @@ input, textarea, select {
 h1, h2, h3, h4, h5, h6 {
     --font: 'Dekko', sans-serif;
     line-height: 100%;
+
+    &:first-child {
+        text-align: center;
+    }
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol {

@@ -16,6 +16,8 @@ var pImg = '/assets/preview.svg'
 var largeFavicon = '/favicon.png'
 
 const { title } = Astro.props as Props;
+var pageClass = title.toLowerCase()
+if (pageClass.includes(' ')) pageClass = pageClass.split(' ').join('-')
 
 let dTitle = `${title} | ${sTitle}`
 if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]

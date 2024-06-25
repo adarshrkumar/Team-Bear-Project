@@ -20,7 +20,7 @@ import '../styles/pages/team.scss'
 <Layout title="Our Team">
     <section class="members">
         <h1>Our Team</h1>
-        <ul class="list">
+        <div class="list">
             {
                 members.map((member) => {
                     var username = member.username
@@ -30,14 +30,12 @@ import '../styles/pages/team.scss'
                         <a href={
                             `/member/${username}/`
                         }>
-                            <li>
-                                {member.name}
-                                {!!role ? <span id="tag">({role})</span> : ''}
-                            </li>
+                            {member.name}
+                            {!!role ? <span id="tag">({role})</span> : ''}
                         </a>
                     )
                 })
             }
-        </ul>
+        </div>
     </section>
 </Layout>

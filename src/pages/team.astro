@@ -24,7 +24,7 @@ import '../styles/pages/team.scss'
             {
                 members.map((member) => {
                     var username = member.username
-                    var role = !!member.role ? member.role === 'Member' ? '' : member.role : ''
+                    var role = !!member.role ? member.role === 'Team Member' ? '' : member.role : ''
     
                     return (
                         <a href={

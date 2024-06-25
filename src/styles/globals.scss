@@ -182,11 +182,6 @@ a, button, [type="submit"], [type="button"] {
 .main {
     flex: 1;
 
-    :is(&, > section):not(:empty) {
-        box-sizing: border-box;
-        padding: $default-padding;
-    }
-
     > section {
         background-color: $base-color;
         color: $text-color;
@@ -195,6 +190,10 @@ a, button, [type="submit"], [type="button"] {
     > * {
         margin-inline: auto;
     }
+}
+:is(.main, .main > section):not(:empty) {
+    box-sizing: border-box;
+    padding: $default-padding;
 }
 
 .list {

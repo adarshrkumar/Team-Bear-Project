@@ -1,7 +1,7 @@
 section.split:not(.tiny) {
     --padding: 25px;
   
-    color: black;
+    color: $text-color;
   
     width: 100%;
     
@@ -12,8 +12,8 @@ section.split:not(.tiny) {
     & > section {
         flex: 1;
 
-        background-color: white;
-        color: black;
+        background-color: $base-color;
+        color: $text-color;
     
         box-sizing: border-box;
         margin-block: var(--padding);

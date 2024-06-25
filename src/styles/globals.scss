@@ -193,4 +193,9 @@ a, button, [type="submit"], [type="button"] {
 .list {
     display: flex;
     flex-direction: column;
-  }
+    justify-content: center;
+
+    & > a {
+        width: fit-content;
+    }
+}

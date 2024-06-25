@@ -39,6 +39,7 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
         userData = json.response
       }
       else {
+        console.log(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
         console.log(json)
         userData = json
       }

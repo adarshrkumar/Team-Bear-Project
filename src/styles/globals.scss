@@ -187,7 +187,8 @@ a, button, [type="submit"], [type="button"] {
 }
 
 .list {
-  // width: fit-content;
+    display: flex;
+    flex-direction: column;
   
   a:has(> li), li {
     width: fit-content;

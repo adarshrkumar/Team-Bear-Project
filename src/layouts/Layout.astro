@@ -16,8 +16,17 @@ var pImg = '/assets/preview.svg'
 var largeFavicon = '/favicon.png'
 
 const { title } = Astro.props as Props;
-var pageClass = title.toLowerCase()
-if (pageClass.includes(' ')) pageClass = pageClass.split(' ').join('-')
+console.log(title)
+
+var classItems = ['main']
+
+if (title) {
+  var pageClass = title.toLowerCase()
+  if (pageClass.includes(' ')) pageClass = pageClass.split(' ').join('-')
+  classItems.push(pageClass)
+}
+
+classItems = classItems.join(' ')
 
 let dTitle = `${title} | ${sTitle}`
 if (title === 'Home') dTitle += sTitle
@@ -42,7 +51,7 @@ if (title === 'Home') dTitle += sTitle
   </head>
   <body>
     <Header siteName={sTitle} />
-    <main id="content" class="main">
+    <main id="content" class={classItems}>
       <slot />
     </main>
     <Footer siteName={sTitle} />

@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .hero {
     --padding-inline: 10vw;
 
@@ -74,8 +76,8 @@
     }
 
     &:not(.error) > section {
-        background: white;
-        color: black;
+        background-color: $base-color;
+        color: $text-color;
     }
   }
     

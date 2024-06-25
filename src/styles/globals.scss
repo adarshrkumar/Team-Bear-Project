@@ -199,7 +199,8 @@ a, button, [type="submit"], [type="button"] {
 .list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: $default-padding;
 
     & > a {
         width: fit-content;

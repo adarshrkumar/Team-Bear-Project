@@ -76,7 +76,7 @@ input, textarea, select {
 }
 
 .hHr {
-  background-color: var(--b-color, white);
+  background-color: var(--b-color, $base-color);
 
   display: block;
   margin: var(--marg, 0);

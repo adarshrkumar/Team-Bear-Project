@@ -163,7 +163,10 @@ button, [type="submit"], [type="button"] {
     }
 
     &.fl {
-        width: fit-content;
+        &-right, &-center, &-left {
+            width: fit-content;
+        }
+
         &-right {
             margin-left: auto;
         }

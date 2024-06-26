@@ -187,7 +187,7 @@ img, video, audio, media, iframe, object {
 .main {
     flex: 1;
 
-    > section {
+    > section:not(.split) {
         background-color: $base-color;
         color: $text-color;
     }
@@ -196,7 +196,7 @@ img, video, audio, media, iframe, object {
         margin-inline: auto;
     }
 }
-:is(.main, .main > section):not(:empty) {
+:is(.main, .main > :is(section:not(.split), section.split > section)):not(:empty) {
     box-sizing: border-box;
     padding: $default-padding;
 }

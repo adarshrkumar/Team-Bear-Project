@@ -213,7 +213,7 @@ img, video, audio, media, iframe, object {
     }
 }
 
-:is(.main > section:not(.split), section.split > section) {
+:is(.main > section:not(.split), section.split > section):not(.no-padding) {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
 }

@@ -163,7 +163,7 @@ button, [type="submit"], [type="button"] {
     }
 
     &.fl {
-        min-width: fit-content
+        width: fit-content
         &-right {
             margin-left: auto;
         }

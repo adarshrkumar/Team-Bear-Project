@@ -201,8 +201,8 @@ img, video, audio, media, iframe, object {
     padding: $default-padding;
 }
 
-.main > :is(section:not(.split), section.split > section):empty {
-    min-height: 250px;
+.empty-secton {
+    min-height: 500px;
 }
 
 .split {
@@ -212,9 +212,9 @@ img, video, audio, media, iframe, object {
 }
 
 .banner {
-    &__parent {
+    // &__parent {
 
-    }
+    // }
     &__image {
         object-fit: cover;
         object-position: center;

@@ -141,12 +141,12 @@ button, [type="submit"], [type="button"] {
 
     &:not(.primary) {
         background-color: $base-color;
-        --border-color: $text-color;
+        --border-color: #{$text-color};
         color: $text-color;
 
         &:is(:hover, :focus-visible) {
             background-color: $text-color;
-            --border-color: $base-color;
+            --border-color: #{$base-color};
             color: $base-color;
         }
     }

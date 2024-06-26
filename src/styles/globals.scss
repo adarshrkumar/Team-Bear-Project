@@ -205,7 +205,6 @@ img, video, audio, media, iframe, object {
 }
 :is(.main:not(:empty), .main > :is(section:not(.split), section.split > section)) {
     box-sizing: border-box;
-    margin-inline: auto;
     padding: $default-padding;
 
     background-color: $base-color;

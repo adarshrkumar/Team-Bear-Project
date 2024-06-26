@@ -214,8 +214,6 @@ img, video, audio, media, iframe, object {
     &__image {
         object-fit: cover;
         object-position: center;
-        min-inline-size: 100%;
-        min-block-size: 100%;
     }
 }
 

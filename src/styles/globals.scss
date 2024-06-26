@@ -209,6 +209,10 @@ img, video, audio, media, iframe, object {
     display: grid;
     grid-template-columns: repeat(var(--cols, 2), 1fr);
     grid-template-rows: repeat(var(--rows, 1), 1fr);
+
+    .two-cols {
+        grid-column: span 2;
+    }
 }
 
 .banner {

@@ -4,6 +4,7 @@
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: calc($default-padding / 2);
     }
 
     &__pfp {

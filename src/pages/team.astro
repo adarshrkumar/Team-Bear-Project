@@ -20,6 +20,28 @@ import '../styles/pages/team.scss'
 <Layout title="Our Team">
     <section class="members">
         <h1>Our Team</h1>
+        <div class="member__list">
+            {
+                members.map((member) => {
+                    var username = member.username
+                    var role = !!member.role ? member.role === 'Team Member' ? '' : member.role : ''
+    
+                    return (
+                        <div class="member">
+                            <img src={member.pfp.url} alt={`Image of ${member.name}`} class="member__image">
+                            <div class="member__info">
+                                <h3 class="member__name">{member.name}</h3> 
+                                <span class="member__role">{member.role}</span>
+                                <p class="member_bio" set:html={member.bio.result} />
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </section>
+    <section class="members">
+        <h1>Our Team</h1>
         <div class="list">
             {
                 members.map((member) => {

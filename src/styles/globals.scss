@@ -196,9 +196,13 @@ img, video, audio, media, iframe, object {
         margin-inline: auto;
     }
 }
-:is(.main, .main > :is(section:not(.split), section.split > section)):not(:empty) {
+:is(.main:not(:empty), .main > :is(section:not(.split), section.split > section)) {
     box-sizing: border-box;
     padding: $default-padding;
+}
+
+.main > :is(section:not(.split), section.split > section):empty {
+    min-height: 250px;
 }
 
 .split {

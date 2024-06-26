@@ -22,4 +22,7 @@
         object-fit: cover;
         object-position: center;
     }
+    &__name, &__role, &__bio {
+        text-align: center;
+    }
 }

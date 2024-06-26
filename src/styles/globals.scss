@@ -203,7 +203,7 @@ img, video, audio, media, iframe, object {
         margin-inline: auto;
     }
 }
-:is(.main:not(:empty), .main > :is(section:not(.split), section.split > section)) {
+:is(.main:not(:empty), .main > section:not(.split), section.split > section) {
     box-sizing: border-box;
     padding: $default-padding;
 }

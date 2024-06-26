@@ -163,13 +163,13 @@ button, [type="submit"], [type="button"] {
     }
 
     &.fl {
-        &__right {
+        &-right {
             margin-left: auto;
         }
-        &__center {
+        &-center {
             margin-inline: auto;
         }
-        &__left {
+        &-left {
             margin-right: auto;
         }
     }

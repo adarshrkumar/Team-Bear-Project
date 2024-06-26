@@ -201,6 +201,12 @@ img, video, audio, media, iframe, object {
     padding: $default-padding;
 }
 
+.split {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 2), 1fr);
+    grid-template-rows: repeat(var(--rows, 1), 1fr);
+}
+
 .list {
     display: flex;
     flex-direction: column;

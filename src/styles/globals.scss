@@ -161,6 +161,18 @@ button, [type="submit"], [type="button"] {
             color: $text-color;
         }
     }
+
+    &.fl {
+        &__right {
+            margin-left: auto;
+        }
+        &__center {
+            margin-inline: auto;
+        }
+        &__left {
+            margin-right: auto;
+        }
+    }
 }
 
 input[type=text], input[type=email], select, textarea {

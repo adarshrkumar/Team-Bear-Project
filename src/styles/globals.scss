@@ -213,9 +213,11 @@ img, video, audio, media, iframe, object {
     }
 }
 
-:is(.main > section:not(.split), section.split > section):not(.no-padding) {
+:is(.main > section:not(.split), section.split > section) {
     box-sizing: border-box;
-    padding: calc($default-padding / 2);
+    &:not(.no-padding) {
+        padding: calc($default-padding / 2);
+    }
 }
 
 :is(.main > section:not(.split), section.split > section) {

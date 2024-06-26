@@ -207,9 +207,6 @@ img, video, audio, media, iframe, object {
         flex-direction: column;
         gap: $default-padding;
     }
-    > * {
-        margin-inline: auto;
-    }
 }
 
 :is(.main > section:not(.split), section.split > section) {

@@ -9,8 +9,13 @@
 
     box-sizing: border-box;
     padding: calc($default-padding / 2);
+    
     background-color: $accent-clr;
     color: $base-color;
+    
+    display: flex;
+    flex-direction: column;
+    gap: calc($default-padding / 2);
 
     &__image {
         aspect-ratio: 1;

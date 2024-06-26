@@ -1,6 +1,14 @@
 @import '../variables.scss';
 
-.member__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.member {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    &__pfp {
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center;
+    }
 }

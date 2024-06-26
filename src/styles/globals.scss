@@ -208,7 +208,7 @@ img, video, audio, media, iframe, object {
     padding: $default-padding;
 }
 
-.main > :is(section:not(.split), section.split > section) {
+:is(.main > section:not(.split), section.split > section) {
     background-color: $base-color;
     color: $text-color;
 }

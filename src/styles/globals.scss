@@ -198,14 +198,23 @@ img, video, audio, media, iframe, object {
 
 .main {
     flex: 1;
+    
+    &:not(:empty) {
+        box-sizing: border-box;
+        padding: $default-padding;
 
+        display: flex;
+        flex-direction: column;
+        gap: $default-padding;
+    }
     > * {
         margin-inline: auto;
     }
 }
-:is(.main:not(:empty), .main > section:not(.split), section.split > section) {
+
+:is(.main > section:not(.split), section.split > section) {
     box-sizing: border-box;
-    padding: $default-padding;
+    padding: calc($default-padding / 2);
 }
 
 :is(.main > section:not(.split), section.split > section) {
@@ -221,6 +230,7 @@ img, video, audio, media, iframe, object {
     display: grid;
     grid-template-columns: repeat(var(--cols, 2), 1fr);
     grid-template-rows: repeat(var(--rows, 1), 1fr);
+    gap: calc($default-padding / 2);
 
     .two-cols {
         grid-column: span 2;

@@ -199,11 +199,6 @@ img, video, audio, media, iframe, object {
 .main {
     flex: 1;
 
-    > section:not(.split) {
-        background-color: $base-color;
-        color: $text-color;
-    }
-
     > * {
         margin-inline: auto;
     }
@@ -211,6 +206,9 @@ img, video, audio, media, iframe, object {
 :is(.main:not(:empty), .main > :is(section:not(.split), section.split > section)) {
     box-sizing: border-box;
     padding: $default-padding;
+
+    background-color: $base-color;
+    color: $text-color;
 }
 
 .empty-secton {

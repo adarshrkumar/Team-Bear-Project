@@ -7,26 +7,50 @@ export interface Props {
 
 var { siteName } = Astro.props as Props
 
-var links = await Astro.glob('../pages/*.astro')
+var pages = await Astro.glob('../pages/*.astro')
 
-// var links = [
-//   {
-//     name: 'Home', 
-//   }, 
-//   {
-//     name: 'Mission', 
-//   }, 
-//   {
-//     name: 'Projects', 
-//   }, 
-//   {
-//     name: 'Team', 
-//   }, 
-//   {
-//     name: 'Results', 
-//   }, 
-// ]
+pages.map(link => {
+  addLink(link)
+})
 
+function addLink(link) {
+  var lPath = link.url
+  var hasHome = false
+  
+  var fileName = lPath
+  if (fileName.startsWith('/')) fileName = fileName.slice(1)
+  if (fileName === '' && !hasHome) {
+    fileName = 'home'
+    hasHome = true
+  }
+  else if (fileName.startsWith('_')) return ''
+  else if (fileName.startsWith('[') && fileName.wndsWith(']')) return ''
+  else if (parseInt(fileName)) return ''
+
+  var nameParts = []
+  if (fileName.includes('-')) nameParts = fileName.split('-')
+  else nameParts = [fileName]
+
+  nameParts.forEach((p, i) => {
+    nameParts[i] = `${p.substring(0, 1).toUpperCase()}${p.slice(1)}`
+  })
+
+  var name = nameParts.join(' ')
+  var extraClasses = ''
+
+  if (lPath === 'home') lPath = '/'
+  if (lPath === path) extraClasses += ' primary'
+  if (!lPath.includes('://')) lPath = `/${lPath}/`
+
+  if (lPath.endsWith('//')) lPath = lPath.slice(0, -1)
+  if (lPath.startsWith('//')) lPath = lPath.slice(1)
+
+  links.push({
+    path: lPath,
+    extraClasses: extraClasses,
+    name: name
+  })
+}
 
 var path = Astro.url.pathname
 var domain = Astro.url.origin
@@ -53,38 +77,7 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
         </div>
         {
           links.map(link => {
-            var lPath = link.url
-            var hasHome = false
-            
-            var fileName = lPath
-            if (fileName.startsWith('/')) fileName = fileName.slice(1)
-            if (fileName === '' && !hasHome) {
-              fileName = 'home'
-              hasHome = true
-            }
-            else if (fileName.startsWith('_')) return ''
-            else if (fileName.startsWith('[') && fileName.wndsWith(']')) return ''
-            else if (parseInt(fileName)) return ''
-
-            var nameParts = []
-            if (fileName.includes('-')) nameParts = fileName.split('-')
-            else nameParts = [fileName]
-          
-            nameParts.forEach((p, i) => {
-              nameParts[i] = `${p.substring(0, 1).toUpperCase()}${p.slice(1)}`
-            })
-
-            var name = nameParts.join(' ')
-            var extraClasses = ''
-
-            if (lPath === 'home') lPath = '/'
-            if (lPath === path) extraClasses += ' primary'
-            if (!lPath.includes('://')) lPath = `/${lPath}/`
-
-            if (lPath.endsWith('//')) lPath = lPath.slice(0, -1)
-            if (lPath.startsWith('//')) lPath = lPath.slice(1)
-
-            return <a href={lPath} class={`btn${extraClasses}`}>{name}</a>
+            <a href={link.path} class={`btn${link.extraClasses}`}>{link.name}</a>
           })
         }
       </div>

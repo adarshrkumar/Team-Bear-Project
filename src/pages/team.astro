@@ -29,7 +29,7 @@ import '../styles/pages/team.scss'
                     if (!pfp.endsWith('/pfp.png')) pfp = `${pfp.slice(0, -5)}=s0`
 
                     var bio = member.bio.result
-                    if (bio.includes(role)) bio = bio.replace(role, 'Team Member')
+                    if (bio.includes(role) && role !== 'Team Member') bio = bio.split(role).join('Team Member')
 
     
                     return (

@@ -109,6 +109,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 @for $n from 1 through 6 {
     h#{n}:first-child {
+        @debug $n;
         font-size: #{(-0.01*math.pow(n, 3) + 0.17*math.pow(n, 2) - 0.92*n + 2.77) * 1em};
     }
 }

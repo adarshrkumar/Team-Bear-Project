@@ -99,23 +99,23 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     }
 }
 
-h1 { $fs: 2em }
-h2 { $fs: 1.5em }
-h3 { $fs: 1.17em }
-h4 { $fs: 1em }
-h5 { $fs: 0.83em }
-h6 { $fs: 0.67em }
+// h1 { $fs: 2em }
+// h2 { $fs: 1.5em }
+// h3 { $fs: 1.17em }
+// h4 { $fs: 1em }
+// h5 { $fs: 0.83em }
+// h6 { $fs: 0.67em }
 
 @for $n from 1 through 6 {
     h#{n}:first-child {
-        font-size: $fs;
+        font-size: #{(-0.01*math.pow(n, 3) + 0.17*math.pow(n, 2) - 0.92*n + 2.77) * 1em};
     }
 }
 
 @media (width < 310px) {
     @for $n from 1 through 6 {
         h#{n}:first-child {
-            font-size: calc($fs - ($fs/$fs)/2);
+            font-size: #{(-0.01*math.pow(n, 3) + 0.17*math.pow(n, 2) - 0.92*n + 2.77) - 0.5 * 1em};
         }
     }
 }

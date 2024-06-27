@@ -9,17 +9,6 @@ var { siteName } = Astro.props as Props
 
 var pages = await Astro.glob('../pages/*.astro')
 
-var homePage = pages.filter(p => p.url === '')
-console.log(homePage)
-if (homePage) {
-  if (homePage.length < 0) {
-    homePage = homePage[0]
-    addLink(homePage)
-    var hIndex = pages.indexOf(homePage)
-    pages.splice(hIndex, 1)
-  }
-}
-
 var links = []
 pages.map(page => {
   var res = getLink(page)

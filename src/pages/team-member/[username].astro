@@ -43,6 +43,10 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
       }
     })
 
+var bio = userData.bio.result
+var role = userData.role
+if (bio.includes(role)) bio = bio.split(role).join('Team Member')
+
 ---
 <Layout title={userData.name} className="profile">
     <section class="member">
@@ -75,7 +79,7 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
                     )) : ''
                 }
             </ul>
-            <p class="bio" id="bio" set:html={userData.bio.result}></p>
+            <p class="bio" id="bio" set:html={bio}></p>
              : <pre>{userData}</pre>
         }
     </section>

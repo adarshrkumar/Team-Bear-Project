@@ -7,6 +7,7 @@ import '../styles/icons.scss'
 
 export interface Props {
 	title: string;
+	className: string;
 }
 
 var sTitle = 'Food Forward Initiative'
@@ -15,7 +16,7 @@ var sUrl = 'https://team-bear-project.akum.site'
 var pImg = '/assets/preview.svg'
 var largeFavicon = '/favicon.png'
 
-const { title } = Astro.props as Props;
+const { title, className } = Astro.props as Props;
 
 var classItems = ['main']
 
@@ -23,6 +24,15 @@ if (title) {
   var pageClass = title.toLowerCase()
   if (pageClass.includes(' ')) pageClass = pageClass.split(' ').join('-')
   classItems.push(pageClass)
+}
+
+if (className) {
+  if (className.includes(' ')) {
+    className = className.split(' ')
+  }
+  else className = [className]
+  
+  className.forEach(c => classItems.push(c))
 }
 
 classItems = classItems.join(' ')

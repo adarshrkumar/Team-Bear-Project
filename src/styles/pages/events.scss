@@ -20,10 +20,15 @@
 
     &__date {
         aspect-ratio: 1;
+        min-width: 60px;
 
         display: flex;
         flex-direction: column;
         gap: calc($default-padding / 4);
+
+        > * {
+            text-align: center;
+        }
     }
     &__day {
         flex: 1;

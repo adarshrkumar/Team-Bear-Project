@@ -1,3 +1,22 @@
+var latlon = {
+    'Clark Kerr Community Garden': {
+        lat: '37.864276', 
+        lon: '-122.245983'
+    }, 
+    'Sproul Plaza': {
+        lat: '39.942883', 
+        lon: '-75.348385'
+    }, 
+    'MLK Student Union': {
+        lat: '37.869037', 
+        lon: '-122.259702'
+    }, 
+    'Dwinelle Hall, Room 105': {
+        lat: '37.8707285', 
+        lon: '-122.26074326286'
+    }
+}
+
 var map, infobox, Microsoft = null
 var locations = []
 var BingMapsKey = 'AkMdzF1Q7JCJCXj3415UZvH4JYRCJihZ_W7JEOnpx6eH5Hwtt1qie1LQqIrJ7-jS'
@@ -23,42 +42,30 @@ function GetMap() {
 
 function onMapLoad() {
     events.forEach(function(event, i) {
-        var requestOptions = {
-            method: 'GET',
-        };
-          
-        fetch(`https://api.geoapify.com/v1/geocode/search?text=${event.location}%20UC%20Berkeley&apiKey=068d044ed4464de8a2742b35df2c4ce6`, requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                if (result.features.length > 0) {
-                    var feature = result.features[0]
-                    var geometry = feature.geometry
-                    var coordinates = geometry.coordinates
-                    
-                    var location = new Microsoft.Maps.Location(coordinates[1], coordinates[0])
-                    console.log(location)
-                    locations.push(location)
-                    
-                    // Add the pushpin to the map
-                    pin = new Microsoft.Maps.Pushpin(location, {
-                        icon: '/assets/icons/location.svg',
-                    });
-                    pin.metadata = event;
-                    
-                    var events = ['click']
-                    events.forEach(function(ev) {
-                        Microsoft.Maps.Events.addHandler(pin, ev, showInfo);
-                    })
-                    
-                    map.entities.push(pin);
-
-                    if (i >= events.length - 1) {
-                        var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
-                        map.setView({ bounds: rect, padding: 80 });
-                    }
-                }
+        var loc = latlon[event.location]        
+        if (loc) {
+            var location = new Microsoft.Maps.Location(loc.lat, log.lon)
+            console.log(location)
+            locations.push(location)
+            
+            // Add the pushpin to the map
+            pin = new Microsoft.Maps.Pushpin(location, {
+                icon: '/assets/icons/location.svg',
+            });
+            pin.metadata = event;
+            
+            var events = ['click']
+            events.forEach(function(ev) {
+                Microsoft.Maps.Events.addHandler(pin, ev, showInfo);
             })
-            .catch(error => console.log('error', error));
+            
+            map.entities.push(pin);
+
+            if (i >= events.length - 1) {
+                var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
+                map.setView({ bounds: rect, padding: 80 });
+            }
+        }
     })
 }
 
@@ -81,7 +88,7 @@ function showInfo(e) {
         infobox.setOptions({
             location: e.target.getLocation(),
             title: options.title,
-            htmlContent: `<div class="infobox"><span class="title">${options.title.join('<br>')}</span><br><span>${options.description.join('</span><br><span>')}</span></div>`,
+            htmlContent: `<div class='infobox'><span class='title'>${options.title.join('<br>')}</span><br><span>${options.description.join('</span><br><span>')}</span></div>`,
             visible: true
         });
     }

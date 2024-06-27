@@ -24,7 +24,6 @@ pages.map(page => {
   addLink(page)
 })
 
-console.log(links)
 function addLink(link) {
   var lPath = link.url
   var hasHome = false
@@ -89,7 +88,8 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
         </div>
         {
           links.map(link => {
-            <a href={link.path} class={`btn${link.extraClasses}`}>{link.name}</a>
+            console.log(link)
+            return <a href={link.path} class={`btn${link.extraClasses}`}>{link.name}</a>
           })
         }
       </div>

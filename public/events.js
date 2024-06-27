@@ -59,12 +59,12 @@ function onMapLoad() {
             })
             .catch(error => console.log('error', error));
     })
-    
+
     var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
     map.setView({ bounds: rect, padding: 80 });
 }
 
-function showVehicleInfo(e) {
+function showInfo(e) {
     //Make sure the infobox has metadata to display.
     var data = e.target.metadata
     if (data) {

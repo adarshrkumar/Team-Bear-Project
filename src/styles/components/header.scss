@@ -24,6 +24,8 @@ a#go2content[href="javascript:scrollToNum()"] {
   background-color: $accent-clr;
   color: white;
 
+  box-sizing: border-box;
+  padding: var(--padding);
   margin: 0;
 
   width: 100%;
@@ -41,17 +43,7 @@ a#go2content[href="javascript:scrollToNum()"] {
     box-shadow: 0px 0px 10px 0px $accent-clr;
   }
 
-  & > :first-child {
-    padding-left: var(--padding);
-  }
-  
-  & > :last-child {
-    padding-right: var(--padding);
-  }
-  
   .logo-parent {
-    padding: var(--padding) 0 var(--padding) var(--padding);
-
     max-width: 125px;
     height: calc(100% - calc(var(--padding)*2));
 

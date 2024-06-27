@@ -140,7 +140,7 @@ button, [type="submit"], [type="button"] {
     border-radius: 99rem;
 
     padding: 0.75rem 2rem;
-    box-shadow: 0px 3px 29px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: $main-shadow;//0px 3px 29px 0px rgba(0, 0, 0, 0.06);
 
     &[transition] {
         transition: 0.25s ease-in-out;

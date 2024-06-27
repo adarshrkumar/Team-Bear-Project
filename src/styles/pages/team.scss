@@ -36,6 +36,8 @@
         
         object-fit: cover;
         object-position: center;
+
+        box-shadow: $main-shadow;
     }
 
     &__info {

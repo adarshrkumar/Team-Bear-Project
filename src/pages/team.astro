@@ -24,8 +24,13 @@ import '../styles/pages/team.scss'
             {
                 members.map(member => {
                     var role = !!member.role ? member.role === 'Team Member' ? '' : member.role : ''
+
                     var pfp = member.pfp.url
                     if (!pfp.endsWith('/pfp.png')) pfp = `${pfp.slice(0, -5)}=s0`
+
+                    var bio = member.bio.result
+                    if (bio.includes(role)) bio = bio.split(role).join('Team Member')
+
     
                     return (
                         <div class="member">
@@ -33,7 +38,7 @@ import '../styles/pages/team.scss'
                             <div class="member__info">
                                 <h3 class="member__name">{member.name}</h3> 
                                 <span class="member__role">{/*member.role*/'Team Member'}</span>
-                                <p class="member__bio" set:html={member.bio.result} />
+                                <p class="member__bio" set:html={bio} />
                                 <a class="member__link fl-right" href={`/team-member/${member.username}/`}>(Read More)</a>
                             </div>
                         </div>

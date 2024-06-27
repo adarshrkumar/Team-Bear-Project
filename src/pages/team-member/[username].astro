@@ -1,18 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// import '../../styles/pages/team-member.scss'
+import '../../styles/pages/team-member.scss'
 
-// var usernames = []
+var usernames = []
 
-// await fetch(`https://database.graphics-for-good.com/getUsernames`)
-//     .then(res => res.json())
-//     .then(json => usernames = json.response)
+await fetch(`https://database.graphics-for-good.com/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
 
-// var paths = []
-// usernames.forEach(function(u, i) {
-//     paths.push({params: {username: u}})
-// })
+var paths = []
+usernames.forEach(function(u, i) {
+    paths.push({params: {username: u}})
+})
 
 export function getStaticPaths() {
     return [
@@ -24,24 +24,24 @@ export function getStaticPaths() {
     ];
 }
 
-// var { username } = Astro.params;
+var { username } = Astro.params;
 
 var userData = {}
 var code = -1
 
-// await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`)
-//     .then(res => res.json())
-//     .then(json => {
-//       code = json.code
-//       if (code === 200) {
-//         userData = json.response
-//       }
-//       else {
-//         console.log(`\nhttps://database.graphics-for-good.com/getMemberInfo?username=${username}`)
-//         console.log(json)
-//         userData = json
-//       }
-//     })
+await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`)
+    .then(res => res.json())
+    .then(json => {
+      code = json.code
+      if (code === 200) {
+        userData = json.response
+      }
+      else {
+        console.log(`\nhttps://database.graphics-for-good.com/getMemberInfo?username=${username}`)
+        console.log(json)
+        userData = json
+      }
+    })
 
 ---
 <Layout title={userData.name} className="profile">

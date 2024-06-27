@@ -256,7 +256,7 @@ img, video, audio, media, iframe, object {
 
 .flex-split {
     display: flex;
-    gap: calc($default-padding / 2);
+    gap: $default-padding;
     flex-wrap: wrap;
 
     &.tiny {
@@ -282,7 +282,7 @@ img, video, audio, media, iframe, object {
     display: grid;
     grid-template-columns: repeat(var(--cols, 2), 1fr);
     grid-template-rows: repeat(var(--rows, 1), 1fr);
-    gap: calc($default-padding / 2);
+    gap: $default-padding;
 
     &.tiny {
         & > :not(:first-child) {

@@ -78,9 +78,6 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
         }
       </ul>
       <p class="bio" id="bio" set:html={userData.bio.result}></p>
-      {
-        !!userData.portfolio ? <h2>Portfolio</h2> : ''
-      }
       <ul class="photos" style="height: auto; gap: 25px;">
         {
           !!userData.portfolio ? 

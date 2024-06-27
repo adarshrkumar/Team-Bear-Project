@@ -9,8 +9,8 @@
     margin-inline: auto;
     width: fit-content;
 
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: calc($default-padding / 2);
 }
 

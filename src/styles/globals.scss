@@ -290,15 +290,18 @@ img, video, audio, media, iframe, object {
 }
 
 .banner {
-    // &__parent {
-
-    // }
+    @media (width < 750px) {
+        &__parent {
+            min-width: 100%;
+            aspect-ratio: 24 / 7;
+        }
+    }
     &__image {
         display: block;
-        border-radius: calc($default-padding / 2);
+        inline-size: 100%;
 
+        border-radius: calc($default-padding / 2);
         object-fit: cover;
-        object-position: center;
     }
 }
 

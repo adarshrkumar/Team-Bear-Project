@@ -47,48 +47,48 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
 
 ---
 <Layout title={userData.name} className="profile">
-  <section class="member">
-    {
-      code === 200 ? 
-      <img class="pfp" id="pfp" src={
-        !!userData.pfp ? userData.pfp.url : userData.pfp
-      }></span>
-      <h1 class="name" id="name">{userData.name}</h1>
-      <a class="email" id="email" href={`mailto:${
-        !!userData.email ? userData.email.address : userData.email
-      }`}>{
-        !!userData.email ? userData.email.address : userData.email
-      }</a>
-      <a class="location" id="location" href={
-        !!userData.location ? userData.location.mapLink : userData.location
-      }>
-        <div></div>
-        <span>{
-          !!userData.location ? userData.location.combined : userData.location
-        }</span>
-      </a>
-      <ul class="socials">
+    <section class="member">
         {
-          !!userData.socials ? 
-          userData.socials.map((social) => (
-            <li>
-              <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-            </li>
-          )) : ''
+            code === 200 ? 
+            <img class="pfp" id="pfp" src={
+                !!userData.pfp ? userData.pfp.url : userData.pfp
+            }></span>
+            <h1 class="name" id="name">{userData.name}</h1>
+            <a class="email" id="email" href={`mailto:${
+                !!userData.email ? userData.email.address : userData.email
+            }`}>{
+                !!userData.email ? userData.email.address : userData.email
+            }</a>
+            <a class="location" id="location" href={
+                !!userData.location ? userData.location.mapLink : userData.location
+            }>
+                <div></div>
+                <span>{
+                  !!userData.location ? userData.location.combined : userData.location
+                }</span>
+            </a>
+            <ul class="socials">
+                {
+                    !!userData.socials ? 
+                    userData.socials.map((social) => (
+                        <li>
+                            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+                        </li>
+                    )) : ''
+                }
+            </ul>
+            <p class="bio" id="bio" set:html={userData.bio.result}></p>
+            <ul class="photos" style="height: auto; gap: 25px;">
+                {
+                    !!userData.portfolio ? 
+                    userData.portfolio.map((photo) => (
+                        <li>
+                            <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+                        </li>
+                    )) : ''
+                }
+            </ul> : 
+            <pre>{userData}</pre>
         }
-      </ul>
-      <p class="bio" id="bio" set:html={userData.bio.result}></p>
-      <ul class="photos" style="height: auto; gap: 25px;">
-        {
-          !!userData.portfolio ? 
-          userData.portfolio.map((photo) => (
-            <li>
-              <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-            </li>
-          )) : ''
-        }
-      </ul> : 
-      <pre>{userData}</pre>
-    }
-  </section>
+    </section>
 </Layout>

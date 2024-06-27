@@ -115,7 +115,7 @@ h6:first-child { font-size: 0.67em }
     h6:first-child { font-size: 0.17em }
 }
 
-*:not(:is(h1, h2, h3, h4, h5, h6):first-child, .event__day) {
+*:not(:is(h1, h2, h3, h4, h5, h6):first-child, main, section, div, .event__day) {
     @media (width < 310px) {
         & {
             font-size: 0.75em;

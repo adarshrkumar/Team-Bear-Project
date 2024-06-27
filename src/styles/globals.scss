@@ -107,12 +107,12 @@ h5:first-child { font-size: 0.83em }
 h6:first-child { font-size: 0.67em }
 
 @media (width < 310px) {
-    h1:first-child                    { font-size: 1.5em }
-    h2:first-child                    { font-size: 1em }
-    h3:first-child:not(.event__title) { font-size: 0.67em }
-    h4:first-child                    { font-size: 0.5em }
-    h5:first-child                    { font-size: 0.33em }
-    h6:first-child                    { font-size: 0.17em }
+    h1:first-child { font-size: 1.5em }
+    h2:first-child { font-size: 1em }
+    h3:first-child { font-size: 0.67em }
+    h4:first-child { font-size: 0.5em }
+    h5:first-child { font-size: 0.33em }
+    h6:first-child { font-size: 0.17em }
 }
 
 button, [type="submit"], [type="button"] {

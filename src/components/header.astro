@@ -69,7 +69,7 @@ var domain = Astro.url.origin
 if (path.startsWith('/') && path !== '/') path = path.slice(1)
 if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 ---
-<a id="go2content" href="javascript:scrollToNum()">Skip to Content</a>
+<a id="go2content" href="#content">Skip to Content</a>
 <header class="header">
   <a href="/" class="logo-parent">
     <img class="logo" src="/assets/Logo.png" alt={`${siteName} Logo`} title="Our Logo">

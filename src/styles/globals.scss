@@ -208,7 +208,6 @@ img, video, audio, media, iframe, object {
         &:not(:has(> * ~ *)):not(> .no-padding) {
             padding: $default-padding;
         }
-    
 
         display: flex;
         flex-direction: column;

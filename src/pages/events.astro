@@ -5,6 +5,9 @@ import '../styles/pages/events.scss'
 import events from './events.js'
 
 ---
+<head>
+    <script src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkMdzF1Q7JCJCXj3415UZvH4JYRCJihZ_W7JEOnpx6eH5Hwtt1qie1LQqIrJ7-jS" async defer is:inline></script>
+</head>
 <Layout title="Upcoming Events">
     <section class="events__parent">
         <h1 class="page-title">Upcoming Events</h1>
@@ -19,6 +22,7 @@ import events from './events.js'
                             </div>
                             <div class="event__info">
                                 <h3 class="event__title">{event.title}</h3>
+                                <span>{event.location}</span>
                                 <p>{event.description}</p>
                             </div>
                         </div>
@@ -27,4 +31,11 @@ import events from './events.js'
             }
         </div>
     </section>
+    <section class="events__map">
+        <div id="myMap"></div>
+    </section>
+    <script is:inline events={JSON.stringify(events)}>
+        var events = JSON.parse(document.currentScript.getAttribute('events'))
+    </script>
+    <script src="/events.js" is:inline></script>
 </Layout>

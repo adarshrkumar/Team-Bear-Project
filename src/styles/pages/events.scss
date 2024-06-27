@@ -45,3 +45,64 @@
         }
     }
 }
+
+:has( > .InfoboxCustom > .infobox-body > * > .infobox) {
+    $_max: calc(100% - #{$padding*2});
+
+    top: unset !important;
+    left: unset !important;
+    bottom: $padding !important;
+    right: $padding !important;
+
+    max-height: $_max;
+    max-width: $_max;
+    
+    *:not(.infobox *) {
+        max-height: calc(100dvh - #{$hf-size*2} - 20px)
+    }
+
+    .Infobox.no-title {
+        display: block !important;
+        border: none !important;
+        height: 0;
+
+        .infobox-stalk {
+            display: none;
+            top: unset;
+            left: unset;
+        }
+        .infobox-close {
+            right: $padding;
+            top: $padding;
+        }
+    }
+}
+
+.infobox {
+    box-sizing: border-box;
+    padding: $padding;
+
+    background-color: #fff9;
+    color: black;
+
+    border-radius: $padding;
+
+    overflow: auto;
+    
+    .title {
+        font-weight: bold;
+    }
+
+    .stops {
+        display: grid;
+        gap: 0.25rem;
+        .stop {
+            max-width: 25rem;
+            word-wrap: break-word;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

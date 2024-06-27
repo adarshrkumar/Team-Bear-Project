@@ -1,4 +1,5 @@
 var map, infobox, Microsoft = null
+var locations = []
 var BingMapsKey = 'AkMdzF1Q7JCJCXj3415UZvH4JYRCJihZ_W7JEOnpx6eH5Hwtt1qie1LQqIrJ7-jS'
 
 GetMap()
@@ -21,7 +22,6 @@ function GetMap() {
 
 
 function onMapLoad() {
-    var locations = []
     events.forEach(function(event, i) {
         var requestOptions = {
             method: 'GET',

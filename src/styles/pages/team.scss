@@ -30,9 +30,12 @@
 
     &__image {
         aspect-ratio: 1;
+
+        background-color: $base-color;
+        border-radius: 50%;
+        
         object-fit: cover;
         object-position: center;
-        background-color: $base-color;
     }
 
     &__info {

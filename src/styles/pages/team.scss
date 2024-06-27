@@ -1,5 +1,14 @@
 @import '../variables.scss';
 
+.members {
+    display: flex;
+    flex-direction: column;
+    gap: calc($default-padding / 2);
+    .page-title {
+        margin-bottom: 0;
+    }
+}
+
 .member {
     &__list {
         display: grid;

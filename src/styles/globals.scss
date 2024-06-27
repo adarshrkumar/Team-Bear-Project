@@ -99,20 +99,25 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     }
 }
 
-h1:first-child { font-size: 2em }
-h2:first-child { font-size: 1.5em }
-h3:first-child { font-size: 1.17em }
-h4:first-child { font-size: 1em }
-h5:first-child { font-size: 0.83em }
-h6:first-child { font-size: 0.67em }
+h1 { $fs: 2em }
+h2 { $fs: 1.5em }
+h3 { $fs: 1.17em }
+h4 { $fs: 1em }
+h5 { $fs: 0.83em }
+h6 { $fs: 0.67em }
+
+@for $n from 1 through 6 {
+    h#{n}:first-child {
+        font-size: $fs;
+    }
+}
 
 @media (width < 310px) {
-    h1:first-child { font-size: 1.5em }
-    h2:first-child { font-size: 1em }
-    h3:first-child { font-size: 0.67em }
-    h4:first-child { font-size: 0.5em }
-    h5:first-child { font-size: 0.33em }
-    h6:first-child { font-size: 0.17em }
+    @for $n from 1 through 6 {
+        h#{n}:first-child {
+            font-size: calc($fs - ($fs/$fs)/2);
+        }
+    }
 }
 
 button, [type="submit"], [type="button"] {

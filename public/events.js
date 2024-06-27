@@ -44,8 +44,7 @@ function onMapLoad() {
     events.forEach(function(event, i) {
         var loc = latlon[event.location]        
         if (loc) {
-            var location = new Microsoft.Maps.Location(loc.lat, log.lon)
-            console.log(location)
+            var location = new Microsoft.Maps.Location(loc.lat, loc.lon)
             locations.push(location)
             
             // Add the pushpin to the map

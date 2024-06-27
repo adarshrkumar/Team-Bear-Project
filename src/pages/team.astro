@@ -32,7 +32,7 @@ import '../styles/pages/team.scss'
                             <div class="member__info">
                                 <h3 class="member__name">{member.name}</h3> 
                                 <span class="member__role">{member.role}</span>
-                                <p class="member_bio" set:html={member.bio.result} />
+                                <p class="member__bio" set:html={member.bio.result} />
                                 <a class="member__link fl-right" href={`/team-member/${member.username}/`}>(Read More)</a>
                             </div>
                         </div>

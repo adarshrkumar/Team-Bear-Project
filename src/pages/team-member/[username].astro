@@ -78,17 +78,7 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
                 }
             </ul>
             <p class="bio" id="bio" set:html={userData.bio.result}></p>
-            <ul class="photos" style="height: auto; gap: 25px;">
-                {
-                    !!userData.portfolio ? 
-                    userData.portfolio.map((photo) => (
-                        <li>
-                            <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-                        </li>
-                    )) : ''
-                }
-            </ul> : 
-            <pre>{userData}</pre>
+             : <pre>{userData}</pre>
         }
     </section>
 </Layout>

@@ -14,15 +14,15 @@ import Layout from '../../layouts/Layout.astro'
 //     paths.push({params: {username: u}})
 // })
 
-// export function getStaticPaths() {
-//     return [
-//         {params: {username: 'adarsh'}}, 
-//         {params: {username: 'freya'}}, 
-//         {params: {username: 'jadon'}}, 
-//         {params: {username: 'sara'}}, 
-//         {params: {username: 'rayhan'}}, 
-//     ];
-// }
+export function getStaticPaths() {
+    return [
+        {params: {username: 'adarsh'}}, 
+        {params: {username: 'freya'}}, 
+        {params: {username: 'jadon'}}, 
+        {params: {username: 'sara'}}, 
+        {params: {username: 'rayhan'}}, 
+    ];
+}
 
 // var { username } = Astro.params;
 

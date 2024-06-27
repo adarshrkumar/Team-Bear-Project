@@ -270,6 +270,7 @@ img, video, audio, media, iframe, object {
 
     // }
     &__image {
+        border-radius: calc($default-padding / 2);
         object-fit: cover;
         object-position: center;
     }

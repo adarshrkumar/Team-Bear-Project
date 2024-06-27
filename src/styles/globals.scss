@@ -205,9 +205,7 @@ img, video, audio, media, iframe, object {
     
     &:not(:empty) {
         box-sizing: border-box;
-        &:not(:has(> * ~ *)):not(> .no-padding) {
-            padding: $default-padding;
-        }
+        padding: $default-padding;
 
         display: flex;
         flex-direction: column;
@@ -218,6 +216,11 @@ img, video, audio, media, iframe, object {
 :is(.main > section:not(.split), section.split > section) {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
+
+    &.no-padding {
+        margin: calc(-1 * $default-padding);
+        // margin-bottom: 
+    }
 }
 
 :is(.main > section:not(.split), section.split > section) {

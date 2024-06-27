@@ -229,12 +229,13 @@ img, video, audio, media, iframe, object {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
 
-    &:has(> div:has(+ div:not(:has(+ div)))):has(> div + div:not(:has(+ div))) {
+    /* At most 2 */
+    &:has(div:nth-last-child(-n + 2):first-child) {
         display: flex;
         flex-direction: column;
         gap: calc($default-padding / 2);
     }
-    
+
     &:not(.no-padding) {
         border-radius: $default-padding;
     }

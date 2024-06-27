@@ -44,6 +44,13 @@
     }
 }
 
+#myMap {
+    min-height: 500px;
+
+    border-radius: calc($default-padding / 2);
+    overflow: hidden;
+}
+
 $padding: 10px;
 $hf-size: 3.5rem;
 :has( > .InfoboxCustom > .infobox-body > * > .infobox) {

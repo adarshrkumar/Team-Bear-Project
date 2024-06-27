@@ -47,4 +47,10 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
 
 ---
 <Layout title={userData.name} className="profile">
+    <section class="member">
+        {
+            code === 200 ? ''
+             : <pre>{userData}</pre>
+        }
+    </section>
 </Layout>

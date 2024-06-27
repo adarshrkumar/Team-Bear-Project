@@ -4,6 +4,7 @@ import Hero from '../components/hero.astro'
 import Split from '../components/split.astro'
 
 import '../styles/pages/index.scss'
+import '../styles/pages/events.scss'
 
 import events from './events.js'
 ---
@@ -19,7 +20,23 @@ import events from './events.js'
     <section class="split" style="--cols: 8;">
         <section class="home__events__parent three-cols empty-section">
             <h2>Upcoming Events</h2>
-            <div class="home__events"></div>
+            <div class="events">
+                {
+                    events.map(event => {
+                        return (
+                            <div class="event">
+                                <div class="event__date">
+                                    <span class="event__month">{event.date.split(' ')[0]}</span>
+                                    <span class="event__day">{event.date.split(' ')[1]}</span>
+                                </div>
+                                <div class="event__info">
+                                    <h3 class="event__title">{event.title}</h3>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
             <a class="btn fl-right" href="/events/">See Map + More</a>
         </section>
         <section class="home__news__parent five-cols empty-section">

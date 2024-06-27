@@ -33,6 +33,12 @@
     &__day {
         flex: 1;
         font-size: 3em;
+
+        @media (width < 310px) {
+            & {
+                font-size: 2.5em;
+            }
+        }
     }
 
     &__info {
@@ -45,6 +51,12 @@
         > * {
             margin-block: 0;
             width: fit-content;
+        }
+    }
+
+    *:not(h3:first-child, .event__day) {
+        & {
+            font-size: 0.5em;
         }
     }
 }

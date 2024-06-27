@@ -21,28 +21,43 @@ function GetMap() {
 
 
 function onMapLoad() {
-    vehicleData.forEach(function(event, i) {
-        var location = {
-            longitude: vehicleLocation.Longitude, 
-            latitude: vehicleLocation.Latitude, 
-            // altitude: 0, 
-            // altitudeReference: -1,
-        }
-        
-        // Add the pushpin to the map
-        pin = new Microsoft.Maps.Pushpin(location, {
-            text: route,
-            color: color, 
-            // icon: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="20"><rect x="0" y="0" width="100%" height="100%" fill="${color}" /><text x="50%" y="50%" dy="2" textLength="${width-5}" lengthAdjust="spacing" font-family="sans-serif" dominant-baseline="middle" text-anchor="middle">${route}</text></svg>`,
-        });
-        pin.metadata = event;
-        
-        var events = ['click']
-        events.forEach(function(ev) {
-            Microsoft.Maps.Events.addHandler(pin, ev, showInfo);
-        })
-        
-        map.entities.push(pin);
+    events.forEach(function(event, i) {
+        var requestOptions = {
+            method: 'GET',
+        };
+          
+        fetch(`https://api.geoapify.com/v1/geocode/search?text=${event.location}%20UC%20Berkeley&apiKey=068d044ed4464de8a2742b35df2c4ce6`, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                if (result.features.length > 0) {
+                    var feature = result.features[0]
+                    var geometry = feature.geometry
+                    var coordinates = geometry.coordinates
+
+                    var location = {
+                        longitude: coordinates[1], 
+                        latitude: coordinates[0], 
+                        // altitude: 0, 
+                        // altitudeReference: -1,
+                    }
+                    
+                    // Add the pushpin to the map
+                    pin = new Microsoft.Maps.Pushpin(location, {
+                        text: route,
+                        color: color, 
+                        // icon: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="20"><rect x="0" y="0" width="100%" height="100%" fill="${color}" /><text x="50%" y="50%" dy="2" textLength="${width-5}" lengthAdjust="spacing" font-family="sans-serif" dominant-baseline="middle" text-anchor="middle">${route}</text></svg>`,
+                    });
+                    pin.metadata = event;
+                    
+                    var events = ['click']
+                    events.forEach(function(ev) {
+                        Microsoft.Maps.Events.addHandler(pin, ev, showInfo);
+                    })
+                    
+                    map.entities.push(pin);
+                    }
+            })
+            .catch(error => console.log('error', error));
     })
 }
 

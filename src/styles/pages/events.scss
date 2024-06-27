@@ -53,14 +53,6 @@
             width: fit-content;
         }
     }
-
-    *:not(h3:first-child, .event__day) {
-        @media (width < 310px) {
-            & {
-                font-size: 0.5em;
-            }
-        }
-    }
 }
 
 #myMap {

@@ -48,14 +48,14 @@ var role = userData.role
 if (bio.includes(role)) bio = bio.split(role).join('Team Member')
 
 ---
-<Layout title={userData.name} className="profile">
+<Layout title={userData.name.full} className="profile">
     <section class="member">
         {
             code === 200 ? 
             <img class="pfp" id="pfp" src={
                 !!userData.pfp ? userData.pfp.url : userData.pfp
             }></span>
-            <h1 class="name" id="name">{userData.name}</h1>
+            <h1 class="name" id="name">{userData.name.full}</h1>
             <a class="email" id="email" href={`mailto:${
                 !!userData.email ? userData.email.address : userData.email
             }`}>{

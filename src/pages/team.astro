@@ -34,9 +34,9 @@ import '../styles/pages/team.scss'
     
                     return (
                         <div class="member">
-                            <img src={pfp} alt={`Image of ${member.name}`} class="member__image" />
+                            <img src={pfp} alt={`Image of ${member.name.full}`} class="member__image" />
                             <div class="member__info">
-                                <h3 class="member__name">{member.name}</h3> 
+                                <h3 class="member__name">{member.name.full}</h3> 
                                 {/*<span class="member__role">*//*member.role*//*'Team Member'</span>*/}
                                 <p class="member__bio" set:html={bio} />
                                 <a class="member__link fl-center" href={`/team-member/${member.username}/`}>(Read More)</a>

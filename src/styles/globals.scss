@@ -228,6 +228,12 @@ img, video, audio, media, iframe, object {
 :is(.main > section:not(.split, .flex-split), section:is(.split, .flex-split) > section) {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
+
+    &:has(> div:has(+ div:not(:has(+ div)))):has(> div + div:not(:has(+ div))) {
+        display: flex;
+        flex-direction: column;
+        gap: calc($default-padding / 2);
+    }
     
     &:not(.no-padding) {
         border-radius: $default-padding;

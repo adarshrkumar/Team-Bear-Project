@@ -11,6 +11,7 @@ var pages = await Astro.glob('../pages/*.astro')
 
 var homePage = pages.filter(p => p === '/')
 if (homePage) {
+  console.log('hi')
   if (homePage.length < 0) {
     homePage = homePage[0]
     addLink(homePage)

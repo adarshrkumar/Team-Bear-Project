@@ -243,6 +243,11 @@ img, video, audio, media, iframe, object {
     }
 }
 
+:has( > .centered:not(:has(~ *))) {
+    display: grid;
+    place-items: center;
+}
+
 .banner {
     // &__parent {
 

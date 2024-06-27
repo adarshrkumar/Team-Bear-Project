@@ -26,8 +26,6 @@ export function getStaticPaths() {
 
 var { username } = Astro.params;
 
-import MemberPageTemplate from '../../components/memberPageTemplate.astro'
-
 var userData = {}
 var code = -1
 
@@ -49,7 +47,35 @@ await fetch(`https://bear-database.akum.site/getMemberInfo?username=${username}`
 <Layout title={userData.name} className="profile">
     <section class="member">
         {
-            code === 200 ? ''
+            code === 200 ? 
+            <img class="pfp" id="pfp" src={
+                !!userData.pfp ? userData.pfp.url : userData.pfp
+            }></span>
+            <h1 class="name" id="name">{userData.name}</h1>
+            <a class="email" id="email" href={`mailto:${
+                !!userData.email ? userData.email.address : userData.email
+            }`}>{
+                !!userData.email ? userData.email.address : userData.email
+            }</a>
+            <a class="location" id="location" href={
+                !!userData.location ? userData.location.mapLink : userData.location
+            }>
+                <div></div>
+                <span>{
+                  !!userData.location ? userData.location.combined : userData.location
+                }</span>
+            </a>
+            <ul class="socials">
+                {
+                    !!userData.socials ? 
+                    userData.socials.map((social) => (
+                        <li>
+                            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+                        </li>
+                    )) : ''
+                }
+            </ul>
+            <p class="bio" id="bio" set:html={userData.bio.result}></p>
              : <pre>{userData}</pre>
         }
     </section>

@@ -21,6 +21,7 @@ function GetMap() {
 
 
 function onMapLoad() {
+    var locations = []
     events.forEach(function(event, i) {
         var requestOptions = {
             method: 'GET',
@@ -40,6 +41,7 @@ function onMapLoad() {
                         // altitude: 0, 
                         // altitudeReference: -1,
                     }
+                    locations.push(location)
                     
                     // Add the pushpin to the map
                     pin = new Microsoft.Maps.Pushpin(location, {
@@ -57,6 +59,9 @@ function onMapLoad() {
             })
             .catch(error => console.log('error', error));
     })
+    
+    var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
+    map.setView({ bounds: rect, padding: 80 });
 }
 
 function showVehicleInfo(e) {

@@ -238,10 +238,10 @@ img, video, audio, media, iframe, object {
     gap: calc($default-padding / 2);
 
     &.tiny {
-        &:not(:first-child) {
+        & :not(:first-child) {
             padding-left: 0;
         }
-        &:not(:last-child) {
+        & :not(:last-child) {
             padding-right: 0;
         }
     }

@@ -43,7 +43,7 @@ function onMapLoad() {
 
             if (i >= events.length - 1) {
                 var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
-                map.setView({ bounds: rect, padding: 80 });
+                map.setView({ bounds: rect, padding: 40 });
             }
         }
     })

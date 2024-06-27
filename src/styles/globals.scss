@@ -48,10 +48,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.fullHeight:not(body > *.fullHeight, .hero.fullHeight) {
-    height: 100% !important;
-}
-
 body {
     display: flex;
     flex-direction: column;

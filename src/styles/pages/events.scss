@@ -46,6 +46,7 @@
     }
 }
 
+$padding: 10px;
 :has( > .InfoboxCustom > .infobox-body > * > .infobox) {
     $_max: calc(100% - #{$padding*2});
 

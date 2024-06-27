@@ -1,6 +1,11 @@
 @import '../variables.scss';
 
 .home__event__parent {
+    @media (width < 550px) {
+        & {
+            min-width: 100%;
+        }
+    }
     .btn.fl-right {
         margin-top: calc($default-padding / 2)
     }

@@ -212,7 +212,10 @@ img, video, audio, media, iframe, object {
 :is(.main > section:not(.split), section.split > section) {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
-
+    
+    &:not(.no-padding) {
+        border-radius: $default-padding;
+    }
     &.no-padding {
         margin: calc(-1 * $default-padding);
         margin-bottom: $default-padding;

@@ -237,6 +237,13 @@ img, video, audio, media, iframe, object {
     grid-template-rows: repeat(var(--rows, 1), 1fr);
     gap: calc($default-padding / 2);
 
+    &:not(:first-child) {
+        padding-left: 0;
+    }
+    &:not(:last-child) {
+        padding-right: 0;
+    }
+
     .two-cols {
         grid-column: span 2;
     }

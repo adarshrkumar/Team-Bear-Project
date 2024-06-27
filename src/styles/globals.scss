@@ -258,6 +258,12 @@ img, video, audio, media, iframe, object {
     .five-cols {
         grid-column: span 5;
     }
+    .six-cols {
+        grid-column: span 5;
+    }
+    .ten-cols {
+        grid-column: span 5;
+    }
 }
 
 :has(> .centered):not(:has(> .centered ~ *)) {

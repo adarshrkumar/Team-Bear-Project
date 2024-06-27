@@ -34,9 +34,9 @@ function onMapLoad() {
                     var feature = result.features[0]
                     var geometry = feature.geometry
                     var coordinates = geometry.coordinates
-                    console.log(coordinates)
-
-                    var location = new Microsoft.Maps.Location(coordinates[0], coordinates[1])
+                    
+                    var location = new Microsoft.Maps.Location(coordinates[1], coordinates[0])
+                    console.log(location)
                     locations.push(location)
                     
                     // Add the pushpin to the map

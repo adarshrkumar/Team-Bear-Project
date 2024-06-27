@@ -6,18 +6,18 @@ import Split from '../components/split.astro'
 import '../styles/pages/index.scss'
 ---
 <Layout title="Home">
-    <section class="split" style="--cols: 6;">
-        <section class="four-cols empty-section"></section>
-        <section class="banner__parent two-cols empty-section">
+    <section class="split" style="--cols: 4;">
+        <section class="three-cols empty-section"></section>
+        <section class="banner__parent one-cols empty-section">
             <img src="" alt="" class="banner__image" />
         </section>
     </section>
-    <section class="split" style="--cols: 6;">
-        <section class="home__news__parent two-cols empty-section">
+    <section class="split" style="--cols: 4;">
+        <section class="home__news__parent one-cols empty-section">
             <h2>News</h2>
             <div class="home__news"></div>
         </section>
-        <section class="home__events__parent four-cols empty-section">
+        <section class="home__events__parent three-cols empty-section">
             <h2>Upcoming Events</h2>
             <div class="home__events"></div>
             <a class="btn fl-right" href="/events/">See Map + More</a>

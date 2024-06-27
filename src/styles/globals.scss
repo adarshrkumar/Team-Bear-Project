@@ -231,6 +231,30 @@ img, video, audio, media, iframe, object {
     min-height: 300px;
 }
 
+.flex-split {
+    display: flex;
+    gap: calc($default-padding / 2);
+    flex-wrap: wrap;
+
+    &.tiny {
+        & > :not(:first-child) {
+            padding-left: 0;
+        }
+        & > :not(:last-child) {
+            padding-right: 0;
+        }
+    }
+    > * {
+        flex: 1;
+    }
+
+    @for $i from 0 through 10 {
+        .fl-#{$i} {
+            flex: $i
+        }
+    }
+}
+
 .split {
     display: grid;
     grid-template-columns: repeat(var(--cols, 2), 1fr);

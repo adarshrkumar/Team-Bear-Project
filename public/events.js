@@ -36,12 +36,7 @@ function onMapLoad() {
                     var coordinates = geometry.coordinates
                     console.log(coordinates)
 
-                    var location = {
-                        longitude: coordinates[1], 
-                        latitude: coordinates[0], 
-                        // altitude: 0, 
-                        // altitudeReference: -1,
-                    }
+                    var location = new Microsoft.Maps.Location(coordinates[0], coordinates[1])
                     locations.push(location)
                     
                     // Add the pushpin to the map

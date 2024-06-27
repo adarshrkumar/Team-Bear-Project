@@ -11,15 +11,17 @@ var pages = await Astro.glob('../pages/*.astro')
 
 var links = []
 pages.map(page => {
-  var res = getLink(page)
-  if (res.name === 'Home') {
-    links.push(res)
+  var link = getLink(page)
+  if (link.name === 'Home') {
+    links.push(link)
   }
 })
 pages.map(page => {
-  var res = getLink(page)
-  if (res.name !== 'Home') {
-    links.push(res)
+  var link = getLink(page)
+  if (link.name !== 'Home') {
+    if (link.path) {
+      links.push(link)
+    }
   }
 })
 

@@ -5,3 +5,24 @@
     grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
     gap: calc($default-padding / 2);
 }
+
+.event {
+    display: flex;
+    gap: calc($default-padding / 2);
+
+    &__date {
+        aspect-ratio: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: calc($default-padding / 4);
+    }
+    &__day {
+        flex: 1;
+        font-size: 4em;
+    }
+
+    &__info {
+        flex: 1;
+    }
+}

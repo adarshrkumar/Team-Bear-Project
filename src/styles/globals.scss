@@ -230,7 +230,7 @@ img, video, audio, media, iframe, object {
     padding: calc($default-padding / 2);
 
     /* At most 2 */
-    &:has(div:nth-last-child(-n + 2):first-child) {
+    &:has(> div:nth-last-child(-n + 2)) {
         display: flex;
         flex-direction: column;
         gap: calc($default-padding / 2);

@@ -51,13 +51,15 @@ function onMapLoad() {
                     })
                     
                     map.entities.push(pin);
+
+                    if (i >= events.length - 1) {
+                        var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
+                        map.setView({ bounds: rect, padding: 80 });
                     }
+                }
             })
             .catch(error => console.log('error', error));
     })
-
-    var rect = Microsoft.Maps.LocationRect.fromLocations(locations);
-    map.setView({ bounds: rect, padding: 80 });
 }
 
 function showInfo(e) {

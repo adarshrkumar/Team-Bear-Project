@@ -1,7 +1,16 @@
 @import '../variables.scss';
 
 .news {
-    display: flex;
-    flex-direction: column;
+    &, .article {
+        display: flex;
+        flex-direction: column;
+    }
     gap: calc($default-padding / 2);
+    
+    .article {
+        gap: calc($default-padding / 4);
+        > * {
+            margin-inline: 0;
+        }
+    }
 }

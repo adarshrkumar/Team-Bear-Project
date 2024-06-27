@@ -34,6 +34,7 @@ function onMapLoad() {
                     var feature = result.features[0]
                     var geometry = feature.geometry
                     var coordinates = geometry.coordinates
+                    console.log(coordinates)
 
                     var location = {
                         longitude: coordinates[1], 

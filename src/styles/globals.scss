@@ -157,21 +157,21 @@ button, [type="submit"], [type="button"] {
             color: $text-color;
         }
     }
+}
 
-    &.fl {
-        &-right, &-center, &-left {
-            width: fit-content;
-        }
+.fl {
+    &-right, &-center, &-left {
+        width: fit-content;
+    }
 
-        &-right {
-            margin-left: auto;
-        }
-        &-center {
-            margin-inline: auto;
-        }
-        &-left {
-            margin-right: auto;
-        }
+    &-right {
+        margin-left: auto;
+    }
+    &-center {
+        margin-inline: auto;
+    }
+    &-left {
+        margin-right: auto;
     }
 }
 
@@ -270,7 +270,7 @@ img, video, audio, media, iframe, object {
 
 .title__parent {
     padding: $default-padding;
-    
+
     .page-title {
         font-size: 4rem;
     }

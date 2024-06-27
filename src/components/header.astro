@@ -88,7 +88,6 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
         </div>
         {
           links.map(link => {
-            console.log(link)
             return <a href={link.path} class={`btn${link.extraClasses}`}>{link.name}</a>
           })
         }

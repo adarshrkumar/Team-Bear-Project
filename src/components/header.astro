@@ -10,7 +10,7 @@ var { siteName } = Astro.props as Props
 var pages = await Astro.glob('../pages/*.astro')
 
 var homePage = pages.filter(p => p.url === '/')
-console.log(homePage)
+console.log(pages)
 if (homePage) {
   if (homePage.length < 0) {
     homePage = homePage[0]

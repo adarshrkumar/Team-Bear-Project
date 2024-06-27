@@ -209,7 +209,7 @@ img, video, audio, media, iframe, object {
     }
 }
 
-:is(.main > section:not(.split), section.split > section) {
+:is(.main > section:not(.split, .flex-split), section:is(.split, .flex-split) > section) {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
     
@@ -222,7 +222,7 @@ img, video, audio, media, iframe, object {
     }
 }
 
-:is(.main > section:not(.split), section.split > section) {
+:is(.main > section:not(.split, .flex-split), section:is(.split, .flex-split) > section) {
     background-color: $base-color;
     color: $text-color;
 }

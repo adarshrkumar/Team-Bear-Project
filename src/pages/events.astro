@@ -33,6 +33,24 @@ import events from '../events.js'
     </section>
     <script is:inline events={JSON.stringify(events)}>
         var events = JSON.parse(document.currentScript.getAttribute('events'))
+        var latlon = {
+            'Clark Kerr Community Garden': {
+                lat: '37.864276', 
+                lon: '-122.245983'
+            }, 
+            'Sproul Plaza': {
+                lat: '39.942883', 
+                lon: '-75.348385'
+            }, 
+            'MLK Student Union': {
+                lat: '37.869037', 
+                lon: '-122.259702'
+            }, 
+            'Dwinelle Hall, Room 105': {
+                lat: '37.8707285', 
+                lon: '-122.26074326286'
+            }
+        }
     </script>
     <script src="/events.js" is:inline></script>
 </Layout>

@@ -1,22 +1,3 @@
-var latlon = {
-    'Clark Kerr Community Garden': {
-        lat: '37.864276', 
-        lon: '-122.245983'
-    }, 
-    'Sproul Plaza': {
-        lat: '39.942883', 
-        lon: '-75.348385'
-    }, 
-    'MLK Student Union': {
-        lat: '37.869037', 
-        lon: '-122.259702'
-    }, 
-    'Dwinelle Hall, Room 105': {
-        lat: '37.8707285', 
-        lon: '-122.26074326286'
-    }
-}
-
 var map, infobox, Microsoft = null
 var locations = []
 var BingMapsKey = 'AkMdzF1Q7JCJCXj3415UZvH4JYRCJihZ_W7JEOnpx6eH5Hwtt1qie1LQqIrJ7-jS'

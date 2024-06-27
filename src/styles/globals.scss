@@ -219,7 +219,7 @@ img, video, audio, media, iframe, object {
 
     &.no-padding {
         margin: calc(-1 * $default-padding);
-        // margin-bottom: 
+        margin-bottom: $default-padding;
     }
 }
 

@@ -30,7 +30,7 @@ function onMapLoad() {
             
             // Add the pushpin to the map
             pin = new Microsoft.Maps.Pushpin(location, {
-                icon: '/assets/icons/location-small.svg',
+                icon: '/assets/icons/pin.svg',
             });
             pin.metadata = event;
             

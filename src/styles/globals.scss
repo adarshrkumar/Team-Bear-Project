@@ -269,6 +269,8 @@ img, video, audio, media, iframe, object {
 }
 
 .title__parent {
+    padding: $default-padding;
+    
     .page-title {
         font-size: 4rem;
     }

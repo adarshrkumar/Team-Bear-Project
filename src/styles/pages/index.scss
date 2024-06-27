@@ -1,5 +1,11 @@
 @import '../variables.scss';
 
+.home__event__parent {
+    .btn.fl-right {
+        margin-top: calc($default-padding / 2)
+    }
+}
+
 .news {
     &, .article {
         display: flex;

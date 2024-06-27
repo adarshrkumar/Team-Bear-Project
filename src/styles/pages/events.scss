@@ -111,16 +111,7 @@ $hf-size: 3.5rem;
         font-weight: bold;
     }
 
-    .stops {
-        display: grid;
-        gap: 0.25rem;
-        .stop {
-            max-width: 25rem;
-            word-wrap: break-word;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
-        }
+    .infobox__image {
+        max-width: 200px;
     }
 }

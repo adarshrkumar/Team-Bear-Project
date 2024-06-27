@@ -62,6 +62,7 @@ function showInfo(e) {
                 `Time: ${data.time}`,
                 `Location: ${data.location}`,
                 `Description: ${data.description}`,
+                `<img src="${data.image}" class="infobox__image" alt="An Image of ${data.location}">`
             ]
         }
         

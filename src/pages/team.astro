@@ -23,7 +23,7 @@ import '../styles/pages/team.scss'
         <div class="member__list">
             {
                 members.map(member => {
-                    var role = !!member.role ? member.role === 'Team Member' ? '' : member.role : ''
+                    var role = !!member.role ? member.role : 'Team Member'
 
                     var pfp = member.pfp.url
                     if (!pfp.endsWith('/pfp.png')) pfp = `${pfp.slice(0, -5)}=s0`

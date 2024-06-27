@@ -115,7 +115,7 @@ h6:first-child { font-size: 0.67em }
     h6:first-child { font-size: 0.17em }
 }
 
-span, a, p, li, th, td {
+span, a, p, li, th, td, dd {
     @media (width < 310px) {
         & {
             font-size: 0.75rem;

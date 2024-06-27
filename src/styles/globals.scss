@@ -246,6 +246,9 @@ img, video, audio, media, iframe, object {
     .four-cols {
         grid-column: span 4;
     }
+    .five-cols {
+        grid-column: span 5;
+    }
 }
 
 :has(> .centered):not(:has(> .centered ~ *)) {

@@ -23,7 +23,7 @@
     .article {
         gap: calc($default-padding / 4);
         > * {
-            margin-inline: 0;
+            margin-block: 0;
         }
     }
 }

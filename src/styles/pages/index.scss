@@ -21,7 +21,7 @@
     gap: calc($default-padding / 2);
     
     .article {
-        gap: calc($default-padding / 4);
+        gap: calc($default-padding / 2);
         > * {
             margin-block: 0;
         }

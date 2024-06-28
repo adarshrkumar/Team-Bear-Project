@@ -320,6 +320,7 @@ img, video, audio, media, iframe, object {
     }
     &__image {
         display: block;
+        block-size: 100%;
         inline-size: 100%;
 
         border-radius: calc($default-padding / 2);

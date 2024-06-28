@@ -6,37 +6,47 @@ import Hero from '../components/hero.astro'
     <section class="title__parent no-padding">
         <h1 class="page-title">About Us</h1>
     </section>
-    <section class="about">
-        <div class="our-mission">
-            <h2>Our Mission</h2>
-            <p>The Food Forward Initiative is a change-maker project rooted in sustainability and social responsibility. Our mission is to ensure that no edible food goes to waste by repurposing food waste and surplus food from the UC Berkeley campus to benefit the community.</p>
-        </div>
-        <div class="who-we-are">
-            <h2>Who We Are</h2>
-            <p>We are a dedicated team of summer student changemakers, who are passionate about making a positive impact. By collaborating with local organizations, we strive to create a more sustainable and equitable food system.</p>
-        </div>
+    <section class="flex-split">
+        <section class="banner__parent" style="flex: 3;">
+            <img src="/assets/images/sustainability.png" alt="Sustainability" class="banner__image" />
+        </section>
+        <section class="about" style="flex: 5;">
+            <div class="our-mission">
+                <h2>Our Mission</h2>
+                <p>The Food Forward Initiative is a change-maker project rooted in sustainability and social responsibility. Our mission is to ensure that no edible food goes to waste by repurposing food waste and surplus food from the UC Berkeley campus to benefit the community.</p>
+            </div>
+            <div class="who-we-are">
+                <h2>Who We Are</h2>
+                <p>We are a dedicated team of summer student changemakers, who are passionate about making a positive impact. By collaborating with local organizations, we strive to create a more sustainable and equitable food system.</p>
+            </div>
+        </section>
     </section>
-    <section class="what-we-do">
-        <h2>What We Do</h2>
-        <section class="split tiny">
-            <section class="waste-management">
-                <h3>Food Waste Management</h3>
-                <p>We collect used food waste from the campus and redirect it to a community garden. Here, it is composted to enrich the soil, supporting local urban agriculture and reducing landfill usage.</p>
+    <section class="flex-split">
+        <section class="what-we-do" style="flex: 5;">
+            <h2>What We Do</h2>
+            <section class="split tiny">
+                <section class="waste-management">
+                    <h3>Food Waste Management</h3>
+                    <p>We collect used food waste from the campus and redirect it to a community garden. Here, it is composted to enrich the soil, supporting local urban agriculture and reducing landfill usage.</p>
+                </section>
+                <section class="food-redistribution">
+                    <h3>Food Redistribution</h3>
+                    <p>Unused food from the campus is channeled to homeless shelters and food banks, providing nutritious meals to those in need and helping to alleviate food insecurity.</p>
+                </section>
             </section>
-            <section class="food-redistribution">
-                <h3>Food Redistribution</h3>
-                <p>Unused food from the campus is channeled to homeless shelters and food banks, providing nutritious meals to those in need and helping to alleviate food insecurity.</p>
-            </section>
+        </section>
+        <section class="banner__parent" style="flex: 3;">
+            <img src="/assets/images/food-redistribution.jpg" alt="Food Redistribution" class="banner__image" />
         </section>
     </section>
     <section class="about">
         <div class="why-it-matters">
-            <h3>Why It Matters</h3>
+            <h2>Why It Matters</h2>
             <p>Every year, significant amounts of food are wasted, contributing to environmental degradation and missed opportunities to feed those in need. By addressing these issues, the Food Forward Initiative not only supports environmental sustainability but also fosters a sense of community and social justice.</p>
-        </section>
-        <section class="get-involved">
+        </div>
+        <div class="get-involved">
             <h2>Get Involved</h2>
             <p>Join us in making a difference! Whether you're a student, faculty member, or community resident, there are many ways to get involved with the Food Forward Initiative. From volunteering in the community garden to helping with food collection and distribution, your participation is invaluable.</p>
-        </section>
+        </div>
     </section>
 </Layout>

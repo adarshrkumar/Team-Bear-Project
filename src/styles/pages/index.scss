@@ -1,14 +1,8 @@
 @import '../variables.scss';
 
-.home__event__parent, .home__news__parent {
+.home__events__parent, .home__news__parent {
     h2 {
         margin-block: 0;
-    }
-}
-
-.home__event__parent {
-    .btn.fl-right {
-        margin-top: calc($default-padding / 2)
     }
 }
 

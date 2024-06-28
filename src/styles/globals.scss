@@ -9,7 +9,7 @@
     background-color: $accent-clr;
     color: $base-color;
 
-    font-family: var(--font, 'Montserrat', sans-serif);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 // Custom Scrollbar
@@ -82,7 +82,6 @@ input, textarea, select {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    --font: 'Dekko', sans-serif;
     line-height: 100%;
 
     &:not(.event__title):first-child {

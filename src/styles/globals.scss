@@ -232,7 +232,7 @@ img, video, audio, media, iframe, object {
     &:has(> div:nth-last-child(-n + 2)) {
         display: flex;
         flex-direction: column;
-        gap: calc($default-padding / 2);
+        gap: $default-padding;
     }
 
     &:not(.no-padding) {

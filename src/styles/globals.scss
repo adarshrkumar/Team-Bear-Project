@@ -228,6 +228,10 @@ img, video, audio, media, iframe, object {
     box-sizing: border-box;
     padding: calc($default-padding / 2);
 
+    background-color: $base-color;
+    color: $text-color;
+    box-shadow: $main-shadow;
+
     /* At most 2 */
     &:has(> div:nth-last-child(-n + 2)) {
         display: flex;
@@ -242,11 +246,6 @@ img, video, audio, media, iframe, object {
         margin: calc(-1 * $default-padding);
         margin-bottom: 0;
     }
-}
-
-:is(.main > section:not(.split, .flex-split), section:is(.split, .flex-split) > section) {
-    background-color: $base-color;
-    color: $text-color;
 }
 
 .empty-section {

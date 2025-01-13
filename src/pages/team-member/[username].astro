@@ -5,7 +5,7 @@ import '../../styles/pages/team-member.scss'
 
 var usernames = []
 
-await fetch(`https://bear-database.akum.site.com/getUsernames`)
+await fetch(`https://bear-database.akum.site/getUsernames`)
     .then(res => res.json())
     .then(json => usernames = json.response)
 
